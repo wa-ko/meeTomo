@@ -12,6 +12,7 @@
 		521341E62BB9405500A3A6B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 521341E52BB9405500A3A6B0 /* Assets.xcassets */; };
 		521341E92BB9405500A3A6B0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 521341E82BB9405500A3A6B0 /* Preview Assets.xcassets */; };
 		521341F02BC4CADD00A3A6B0 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521341EF2BC4CADD00A3A6B0 /* HomeView.swift */; };
+		523E26EB2BC520BD00B3C4C1 /* AddFriendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523E26EA2BC520BD00B3C4C1 /* AddFriendView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +22,7 @@
 		521341E52BB9405500A3A6B0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		521341E82BB9405500A3A6B0 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		521341EF2BC4CADD00A3A6B0 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		523E26EA2BC520BD00B3C4C1 /* AddFriendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFriendView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 				521341E12BB9405300A3A6B0 /* meeTomoApp.swift */,
 				521341E32BB9405300A3A6B0 /* ContentView.swift */,
 				521341EF2BC4CADD00A3A6B0 /* HomeView.swift */,
+				523E26EA2BC520BD00B3C4C1 /* AddFriendView.swift */,
 				521341E52BB9405500A3A6B0 /* Assets.xcassets */,
 				521341E72BB9405500A3A6B0 /* Preview Content */,
 			);
@@ -142,6 +145,7 @@
 			files = (
 				521341F02BC4CADD00A3A6B0 /* HomeView.swift in Sources */,
 				521341E42BB9405300A3A6B0 /* ContentView.swift in Sources */,
+				523E26EB2BC520BD00B3C4C1 /* AddFriendView.swift in Sources */,
 				521341E22BB9405300A3A6B0 /* meeTomoApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
