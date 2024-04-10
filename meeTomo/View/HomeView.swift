@@ -8,8 +8,11 @@
 import SwiftUI
 
 struct HomeView: View {
-    @State private var isShowAdd = false
+    @State var isShowAdd = false
     @State private var isShowSetting = false
+    //カメラ使用
+    @State private var isPresentedCameraView = false
+    @State private var image: UIImage?
     var body: some View {
         ZStack {
             Color.black
@@ -43,14 +46,16 @@ struct HomeView: View {
                             .font(.title3)
                     })
                     .sheet(isPresented: $isShowAdd, content: {
-                        AddFriendView()
-                            .presentationDetents([.medium])
+                        AddFriendView(isShowAdd: $isShowAdd)
+//                            .presentationDetents([.medium])
                     })
                 }
                 .padding()
                 Spacer()
-                Rectangle()
-                    .foregroundColor(.gray)
+                ZStack{
+                    Rectangle()
+                        .foregroundColor(.gray)
+                }
                 Spacer()
                 HStack{
                     Menu{
@@ -79,13 +84,24 @@ struct HomeView: View {
                     }
                     .foregroundColor(.gray)
                     Spacer()
-                    Button(action: {
-
-                    }, label: {
-                        Image(systemName: "camera")
-                            .foregroundColor(.gray)
-                            .font(.title3)
-                    })
+                    VStack {
+                        Button {
+                            isPresentedCameraView = true
+                        } label: {
+                            Image(systemName: "camera")
+                                .foregroundColor(.gray)
+                                .font(.title3)
+                        }
+                        if let image {
+                            Image(uiImage: image)
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 300)
+                        }
+                    }
+                    .fullScreenCover(isPresented: $isPresentedCameraView) {
+                        CameraView(image: $image).ignoresSafeArea()
+                    }
                 }
                 .padding()
             }

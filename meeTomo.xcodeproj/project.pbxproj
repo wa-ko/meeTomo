@@ -15,6 +15,8 @@
 		523E26EB2BC520BD00B3C4C1 /* AddFriendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523E26EA2BC520BD00B3C4C1 /* AddFriendView.swift */; };
 		523E26ED2BC6312F00B3C4C1 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523E26EC2BC6312F00B3C4C1 /* SettingView.swift */; };
 		523E26EF2BC6336900B3C4C1 /* FriendStructure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523E26EE2BC6336900B3C4C1 /* FriendStructure.swift */; };
+		52A8DF4D2BC63CD900EE3998 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A8DF4C2BC63CD900EE3998 /* ImagePicker.swift */; };
+		52A8DF502BC64DF300EE3998 /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A8DF4F2BC64DF300EE3998 /* Camera.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +29,8 @@
 		523E26EA2BC520BD00B3C4C1 /* AddFriendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFriendView.swift; sourceTree = "<group>"; };
 		523E26EC2BC6312F00B3C4C1 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 		523E26EE2BC6336900B3C4C1 /* FriendStructure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendStructure.swift; sourceTree = "<group>"; };
+		52A8DF4C2BC63CD900EE3998 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		52A8DF4F2BC64DF300EE3998 /* Camera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Camera.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,8 +64,9 @@
 			isa = PBXGroup;
 			children = (
 				521341E12BB9405300A3A6B0 /* meeTomoApp.swift */,
+				52A8DF4E2BC63E5600EE3998 /* ViewModel */,
 				523E26F02BC6341600B3C4C1 /* View */,
-				523E26F12BC6343900B3C4C1 /* model */,
+				523E26F12BC6343900B3C4C1 /* Model */,
 				521341E72BB9405500A3A6B0 /* Preview Content */,
 			);
 			path = meeTomo;
@@ -83,16 +88,25 @@
 				523E26EC2BC6312F00B3C4C1 /* SettingView.swift */,
 				521341E32BB9405300A3A6B0 /* ContentView.swift */,
 				523E26EA2BC520BD00B3C4C1 /* AddFriendView.swift */,
+				52A8DF4F2BC64DF300EE3998 /* Camera.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
 		};
-		523E26F12BC6343900B3C4C1 /* model */ = {
+		523E26F12BC6343900B3C4C1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				523E26EE2BC6336900B3C4C1 /* FriendStructure.swift */,
 			);
-			path = model;
+			path = Model;
+			sourceTree = "<group>";
+		};
+		52A8DF4E2BC63E5600EE3998 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				52A8DF4C2BC63CD900EE3998 /* ImagePicker.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -165,9 +179,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52A8DF502BC64DF300EE3998 /* Camera.swift in Sources */,
 				521341F02BC4CADD00A3A6B0 /* HomeView.swift in Sources */,
 				523E26EF2BC6336900B3C4C1 /* FriendStructure.swift in Sources */,
 				523E26ED2BC6312F00B3C4C1 /* SettingView.swift in Sources */,
+				52A8DF4D2BC63CD900EE3998 /* ImagePicker.swift in Sources */,
 				521341E42BB9405300A3A6B0 /* ContentView.swift in Sources */,
 				523E26EB2BC520BD00B3C4C1 /* AddFriendView.swift in Sources */,
 				521341E22BB9405300A3A6B0 /* meeTomoApp.swift in Sources */,
@@ -307,6 +323,7 @@
 				DEVELOPMENT_TEAM = 9ACM3MY2N2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -336,6 +353,7 @@
 				DEVELOPMENT_TEAM = 9ACM3MY2N2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
