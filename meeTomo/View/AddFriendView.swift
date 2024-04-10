@@ -31,20 +31,7 @@ struct AddFriendView:View {
                        displayedComponents: [.date]
             )
             Spacer()
-            Image(uiImage: self.image)
-                .resizable()
-//                .scaledToFill()
-//                .frame(minWidth: 0, maxWidth: .infinity)
-//                .edgesIgnoringSafeArea(.all)
-            Button(action: {
-                self.isShowPhotoLibrary = true
-            }, label: {
-                Text("写真を選択")
-                    .padding()
-            })
-            .sheet(isPresented: $isShowPhotoLibrary, content: {
-                ImagePicker(sourceType: .photoLibrary, selectedImage: self.$image)
-            })
+            AllMethodsPhotosPicker()
             Spacer()
             Button(action: {
                 isShowAdd.toggle()
