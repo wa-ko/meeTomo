@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct HomeView: View {
-    @State private var isShowSheet = false
+    @State private var isShowAdd = false
+    @State private var isShowSetting = false
     var body: some View {
         ZStack {
             Color.black
@@ -17,11 +18,15 @@ struct HomeView: View {
             VStack{
                 HStack{
                     Button(action: {
-
+                        isShowSetting.toggle()
                     }, label: {
                         Image(systemName: "gearshape")
                             .foregroundColor(.gray)
                             .font(.title3)
+                    })
+                    .sheet(isPresented: $isShowSetting, content: {
+                        SettingView()
+                            .presentationDetents([.medium])
                     })
                     Spacer()
                     VStack{
@@ -31,14 +36,15 @@ struct HomeView: View {
                     .foregroundColor(.gray)
                     Spacer()
                     Button(action: {
-                        isShowSheet.toggle()
+                        isShowAdd.toggle()
                     }, label: {
                         Image(systemName: "plus")
                             .foregroundColor(.gray)
                             .font(.title3)
                     })
-                    .sheet(isPresented: $isShowSheet, content: {
+                    .sheet(isPresented: $isShowAdd, content: {
                         AddFriendView()
+                            .presentationDetents([.medium])
                     })
                 }
                 .padding()

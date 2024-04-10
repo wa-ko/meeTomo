@@ -30,17 +30,12 @@ struct AddFriendView:View {
                        displayedComponents: [.date]
             )
             Spacer()
-            Text("写真選択")
+            Text("ここで写真選択")
             Spacer()
         }
     }
 }
 
-struct Friends {
-    var name: String
-    var date: String
-    var photo: String
-}
 
 #Preview {
     AddFriendView()
