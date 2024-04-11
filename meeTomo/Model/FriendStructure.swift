@@ -8,7 +8,8 @@
 import Foundation
 
 struct Friends {
+    var id = UUID()
     var name: String
     var date: Date
-    var photo: Data
+    var photo: [Data]
 }
