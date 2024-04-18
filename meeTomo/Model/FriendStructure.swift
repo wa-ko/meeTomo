@@ -7,9 +7,13 @@
 
 import Foundation
 
-struct Friends {
+struct Friends: Identifiable{
     var id = UUID()
     var name: String
-    var date: Date
-    var photo: [Data]
+    var photos: [Photo]?
+
+    struct Photo {
+        var date: Date
+        var image: Data
+    }
 }

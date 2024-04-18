@@ -5,11 +5,11 @@
 //  Created by 若生優希 on 2024/04/09.
 //
 import SwiftUI
+import PhotosUI
 
 struct AddFriendView:View {
     @State private var selectedFriend = ""
     //テスト用変数
-    @State private var friendsTest = ["友達1", "友達2", "友達3"]
     @State var friends: [Friends] = []
     @State private var date = Date()
     @State private var image = UIImage()
@@ -17,13 +17,15 @@ struct AddFriendView:View {
     @Binding var isShowAdd: Bool
     @State var isAddNewFriend = false
     @State private var text = ""
+    @State var selectedItem: PhotosPickerItem?
+
     var body: some View {
         VStack{
             Spacer()
             HStack{
                 Picker("友達選択", selection: $selectedFriend) {
-                    ForEach(friendsTest, id: \.self) {
-                        Text($0).tag($0)
+                    ForEach(friends) { friend in
+                        Text(friend.name).tag(friend.id)
                     }
                 }
                 Button(action: {
@@ -31,10 +33,10 @@ struct AddFriendView:View {
                 }, label: {
                     Image(systemName: "plus")
                 })
-                .alert("アラート", isPresented: $isAddNewFriend) {
+                .alert("名前を入力してください", isPresented: $isAddNewFriend) {
                     TextField("名前を入力してください", text: $text)
                     Button {
-                        friendsTest.append(text)
+                        friends.append(Friends(name: text, photos: nil))
                         text = ""
                     } label: {
                         Text("OK")
@@ -42,7 +44,7 @@ struct AddFriendView:View {
                     Button(role: .cancel) {
                         text = ""
                     } label: {
-                        Text("aosdjf")
+                        Text("cancel")
                     }
                 }
             }
@@ -50,8 +52,9 @@ struct AddFriendView:View {
             DatePicker("日にち", selection: $date,
                        displayedComponents: [.date]
             )
+            .labelsHidden()
             Spacer()
-            AllMethodsPhotosPicker()
+            SinglePhotoPicker(selectedItem: PhotosPickerItem?)
             Spacer()
             Button(action: {
                 isShowAdd.toggle()

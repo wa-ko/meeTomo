@@ -64,8 +64,8 @@
 			isa = PBXGroup;
 			children = (
 				521341E12BB9405300A3A6B0 /* meeTomoApp.swift */,
-				52A8DF4E2BC63E5600EE3998 /* ViewModel */,
 				523E26F02BC6341600B3C4C1 /* View */,
+				52A8DF4E2BC63E5600EE3998 /* ViewModel */,
 				523E26F12BC6343900B3C4C1 /* Model */,
 				521341E72BB9405500A3A6B0 /* Preview Content */,
 			);
