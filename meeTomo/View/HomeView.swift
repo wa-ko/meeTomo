@@ -14,7 +14,7 @@ struct HomeView: View {
     @State private var isPresentedCameraView = false
     @State private var image: UIImage?
 //    @AppStorage("friends") var friends: [Friends]
-    @State var friends: [Friends]
+    @State var friends: [Friend]
     var body: some View {
         ZStack {
             Color.black

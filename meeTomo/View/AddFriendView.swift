@@ -16,7 +16,7 @@ struct AddFriendView:View {
     @State var isAddNewFriend = false
     @State var selectedImage: UIImage?
     //テスト用変数
-    @State var friends: [Friends]
+    @State var friends: [Friend]
     @Binding var isShowAdd: Bool
 
     var body: some View {
@@ -40,7 +40,7 @@ struct AddFriendView:View {
                         if text.isEmpty {
                             return print("名前が入力されていません")
                         } else {
-                            friends.append(Friends(name: text, photos: []))
+                            friends.append(Friend(name: text, photos: []))
                             text = ""
                         }
                     } label: {
@@ -66,7 +66,7 @@ struct AddFriendView:View {
                     return print("データが存在しません")
                 } else {
                     // 選択された日付と画像から写真データを作成
-                    let photo = Friends.Photo(date: date, image: selectedImage?.pngData() ?? Data())
+                    let photo = Friend.Photo(date: date, image: selectedImage?.pngData() ?? Data())
                     print(photo)
                     friends = friends.map { friend in
                         var friend = friend
