@@ -3,9 +3,9 @@ import PhotosUI
 
 struct SinglePhotoPicker: View {
     /// フォトピッカー内で選択したアイテムが保持されるプロパティ
-    @Binding var selectedItem: PhotosPickerItem?
+    @State private var selectedItem: PhotosPickerItem?
     /// PhotosPickerItem -> UIImageに変換したアイテムを格納するプロパティ
-    @State private var selectedImage: UIImage?
+    @Binding var selectedImage: UIImage?
 
     var body: some View {
 

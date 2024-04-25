@@ -8,26 +8,27 @@ import SwiftUI
 import PhotosUI
 
 struct AddFriendView:View {
-    @State private var selectedFriend = ""
-    //テスト用変数
-    @State var friends: [Friends] = []
+    @State private var selectedFriendName = ""
     @State private var date = Date()
     @State private var image = UIImage()
     @State private var isShowPhotoLibrary = false
-    @Binding var isShowAdd: Bool
-    @State var isAddNewFriend = false
     @State private var text = ""
-    @State var selectedItem: PhotosPickerItem?
+    @State var isAddNewFriend = false
+    @State var selectedImage: UIImage?
+    //テスト用変数
+    @State var friends: [Friends]
+    @Binding var isShowAdd: Bool
 
     var body: some View {
         VStack{
             Spacer()
             HStack{
-                Picker("友達選択", selection: $selectedFriend) {
+                Picker("友達選択", selection: $selectedFriendName) {
                     ForEach(friends) { friend in
-                        Text(friend.name).tag(friend.id)
+                        Text(friend.name).tag(friend.name)
                     }
                 }
+                Text(selectedFriendName)
                 Button(action: {
                     isAddNewFriend.toggle()
                 }, label: {
@@ -36,8 +37,12 @@ struct AddFriendView:View {
                 .alert("名前を入力してください", isPresented: $isAddNewFriend) {
                     TextField("名前を入力してください", text: $text)
                     Button {
-                        friends.append(Friends(name: text, photos: nil))
-                        text = ""
+                        if text.isEmpty {
+                            return print("名前が入力されていません")
+                        } else {
+                            friends.append(Friends(name: text, photos: []))
+                            text = ""
+                        }
                     } label: {
                         Text("OK")
                     }
@@ -54,17 +59,59 @@ struct AddFriendView:View {
             )
             .labelsHidden()
             Spacer()
-            SinglePhotoPicker(selectedItem: PhotosPickerItem?)
+            SinglePhotoPicker(selectedImage: $selectedImage)
             Spacer()
             Button(action: {
-                isShowAdd.toggle()
+                if selectedFriendName.isEmpty || selectedImage == nil {
+                    return print("データが存在しません")
+                } else {
+                    // 選択された日付と画像から写真データを作成
+                    let photo = Friends.Photo(date: date, image: selectedImage?.pngData() ?? Data())
+                    print(photo)
+                    friends = friends.map { friend in
+                        var friend = friend
+                        if friend.name == selectedFriendName {
+                            friend.photos.append(photo)
+                        }
+                        return friend
+                    }
+                    // 選択された友達の写真リストに写真データを追加
+                    print(friends)
+    //                 データを追加した後は、選択された画像と日付をリセット
+                    selectedImage = nil
+                    date = Date()
+                }
+
             }, label: {
                 Text("追加")
             })
+            Spacer()
+            processFriends() // 友達の情報を表示するメソッドを呼び出す
+        }
+    }
+    // 友達の情報を表示するメソッド
+    @ViewBuilder
+    private func processFriends() -> some View {
+        VStack(alignment: .leading) {
+            ForEach(friends, id: \.id) { friend in
+                Text("Friend Name: \(friend.name)")
+                Text("Friend id: \(friend.id)")
+                VStack(alignment: .leading, spacing: 8) {
+                    ForEach(friend.photos, id: \.date) { photo in
+                        VStack(alignment: .leading, spacing: 4) {
+                            Text("Photo Date: \(photo.date)")
+                            Text("Photo Image: \(photo.image)")
+                        }
+                    }
+                }
+                .padding(.vertical, 8)
+                .border(Color.gray) // 友達ごとの区切りを明示するために境界線を追加
+            }
         }
     }
 }
 
+
 #Preview {
-    AddFriendView(isShowAdd: .constant(true))
+    AddFriendView(friends: [], isShowAdd: .constant(true))
 }

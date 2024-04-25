@@ -11,7 +11,7 @@ import SwiftUI
 struct meeTomoApp: App {
     var body: some Scene {
         WindowGroup {
-            HomeView()
+            HomeView(friends: [])
         }
     }
 }

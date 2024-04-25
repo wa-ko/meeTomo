@@ -13,7 +13,8 @@ struct HomeView: View {
     //カメラ使用
     @State private var isPresentedCameraView = false
     @State private var image: UIImage?
-//    @AppStorage("friends") var friends: [Friends] = []
+//    @AppStorage("friends") var friends: [Friends]
+    @State var friends: [Friends]
     var body: some View {
         ZStack {
             Color.black
@@ -35,8 +36,8 @@ struct HomeView: View {
                     Spacer()
                     VStack{
                         Text("吉川花子")
-                        Text("2024/03/30")
-                    }
+                        Text("\(friends.first?.photos.first?.date ?? Date())")
+                            .foregroundColor(.gray)                    }
                     .foregroundColor(.gray)
                     Spacer()
                     Button(action: {
@@ -47,7 +48,7 @@ struct HomeView: View {
                             .font(.title3)
                     })
                     .sheet(isPresented: $isShowAdd, content: {
-                        AddFriendView(isShowAdd: $isShowAdd)
+//                        AddFriendView(friends: $friends, isShowAdd: $isShowAdd)
 //                            .presentationDetents([.medium])
                     })
                 }
@@ -56,6 +57,16 @@ struct HomeView: View {
                 ZStack{
                     Rectangle()
                         .foregroundColor(.gray)
+                        .overlay(
+                            // friendsの最初の要素がnilでないことを確認してから写真を表示
+                            friends.first?.photos.first.map { photo in
+                                Image(uiImage: UIImage(data: photo.image)!)
+                                    .resizable()
+                                    .scaledToFit()
+                            }
+                        )
+                        .frame(height: 200) // 画像の高さを調整
+                        .padding()
                 }
                 Spacer()
                 HStack{
@@ -112,5 +123,5 @@ struct HomeView: View {
 }
 
 #Preview {
-    HomeView()
+    HomeView(friends: [])
 }
