@@ -21,10 +21,9 @@ struct SettingView: View {
             }
             .onDelete(perform: { indexSet in
                 indexSet.forEach { index in
-                    print(index)
+                    context.delete(friends[index])
                 }
             })
-            .moveDisabled(true)
         }
         EditButton()
     }
