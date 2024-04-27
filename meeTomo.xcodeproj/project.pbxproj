@@ -125,6 +125,8 @@
 			dependencies = (
 			);
 			name = meeTomo;
+			packageProductDependencies = (
+			);
 			productName = meeTomo;
 			productReference = 521341DE2BB9405300A3A6B0 /* meeTomo.app */;
 			productType = "com.apple.product-type.application";
@@ -153,6 +155,8 @@
 				Base,
 			);
 			mainGroup = 521341D52BB9405300A3A6B0;
+			packageReferences = (
+			);
 			productRefGroup = 521341DF2BB9405300A3A6B0 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";

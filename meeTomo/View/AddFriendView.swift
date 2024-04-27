@@ -11,12 +11,11 @@ struct AddFriendView:View {
     @State private var selectedFriendName = ""
     @State private var date = Date()
     @State private var image = UIImage()
-    @State private var isShowPhotoLibrary = false
     @State private var text = ""
     @State var isAddNewFriend = false
     @State var selectedImage: UIImage?
     //テスト用変数
-    @State var friends: [Friend]
+    @Binding var friends: [Friend]
     @Binding var isShowAdd: Bool
 
     var body: some View {
@@ -67,7 +66,6 @@ struct AddFriendView:View {
                 } else {
                     // 選択された日付と画像から写真データを作成
                     let photo = Friend.Photo(date: date, image: selectedImage?.pngData() ?? Data())
-                    print(photo)
                     friends = friends.map { friend in
                         var friend = friend
                         if friend.name == selectedFriendName {
@@ -80,12 +78,14 @@ struct AddFriendView:View {
     //                 データを追加した後は、選択された画像と日付をリセット
                     selectedImage = nil
                     date = Date()
+                    isShowAdd.toggle()
                 }
 
             }, label: {
                 Text("追加")
             })
             Spacer()
+//            UIImage(data: friends.first?.photos.first?.image ?? Data())?
             processFriends() // 友達の情報を表示するメソッドを呼び出す
         }
     }
@@ -100,7 +100,12 @@ struct AddFriendView:View {
                     ForEach(friend.photos, id: \.date) { photo in
                         VStack(alignment: .leading, spacing: 4) {
                             Text("Photo Date: \(photo.date)")
-                            Text("Photo Image: \(photo.image)")
+                            if let uiImage = UIImage(data: photo.image) {
+                                Image(uiImage: uiImage)
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width: 100, height: 100)
+                            }
                         }
                     }
                 }
@@ -113,5 +118,5 @@ struct AddFriendView:View {
 
 
 #Preview {
-    AddFriendView(friends: [], isShowAdd: .constant(true))
+    AddFriendView(friends: .constant([]), isShowAdd: .constant(true))
 }
