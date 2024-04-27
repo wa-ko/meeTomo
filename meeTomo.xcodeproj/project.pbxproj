@@ -11,6 +11,12 @@
 		521341E42BB9405300A3A6B0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521341E32BB9405300A3A6B0 /* ContentView.swift */; };
 		521341E62BB9405500A3A6B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 521341E52BB9405500A3A6B0 /* Assets.xcassets */; };
 		521341E92BB9405500A3A6B0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 521341E82BB9405500A3A6B0 /* Preview Assets.xcassets */; };
+		521341F02BC4CADD00A3A6B0 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521341EF2BC4CADD00A3A6B0 /* HomeView.swift */; };
+		523E26EB2BC520BD00B3C4C1 /* AddFriendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523E26EA2BC520BD00B3C4C1 /* AddFriendView.swift */; };
+		523E26ED2BC6312F00B3C4C1 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523E26EC2BC6312F00B3C4C1 /* SettingView.swift */; };
+		523E26EF2BC6336900B3C4C1 /* FriendStructure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523E26EE2BC6336900B3C4C1 /* FriendStructure.swift */; };
+		52A8DF502BC64DF300EE3998 /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A8DF4F2BC64DF300EE3998 /* Camera.swift */; };
+		52A8DF522BC6589100EE3998 /* PhotoPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A8DF512BC6589100EE3998 /* PhotoPicker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +25,12 @@
 		521341E32BB9405300A3A6B0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		521341E52BB9405500A3A6B0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		521341E82BB9405500A3A6B0 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		521341EF2BC4CADD00A3A6B0 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		523E26EA2BC520BD00B3C4C1 /* AddFriendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFriendView.swift; sourceTree = "<group>"; };
+		523E26EC2BC6312F00B3C4C1 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
+		523E26EE2BC6336900B3C4C1 /* FriendStructure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendStructure.swift; sourceTree = "<group>"; };
+		52A8DF4F2BC64DF300EE3998 /* Camera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Camera.swift; sourceTree = "<group>"; };
+		52A8DF512BC6589100EE3998 /* PhotoPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPicker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,8 +64,9 @@
 			isa = PBXGroup;
 			children = (
 				521341E12BB9405300A3A6B0 /* meeTomoApp.swift */,
-				521341E32BB9405300A3A6B0 /* ContentView.swift */,
-				521341E52BB9405500A3A6B0 /* Assets.xcassets */,
+				523E26F02BC6341600B3C4C1 /* View */,
+				52A8DF4E2BC63E5600EE3998 /* ViewModel */,
+				523E26F12BC6343900B3C4C1 /* Model */,
 				521341E72BB9405500A3A6B0 /* Preview Content */,
 			);
 			path = meeTomo;
@@ -62,9 +75,38 @@
 		521341E72BB9405500A3A6B0 /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
+				521341E52BB9405500A3A6B0 /* Assets.xcassets */,
 				521341E82BB9405500A3A6B0 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		523E26F02BC6341600B3C4C1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				521341E32BB9405300A3A6B0 /* ContentView.swift */,
+				521341EF2BC4CADD00A3A6B0 /* HomeView.swift */,
+				523E26EC2BC6312F00B3C4C1 /* SettingView.swift */,
+				523E26EA2BC520BD00B3C4C1 /* AddFriendView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		523E26F12BC6343900B3C4C1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				523E26EE2BC6336900B3C4C1 /* FriendStructure.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		52A8DF4E2BC63E5600EE3998 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				52A8DF512BC6589100EE3998 /* PhotoPicker.swift */,
+				52A8DF4F2BC64DF300EE3998 /* Camera.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +125,8 @@
 			dependencies = (
 			);
 			name = meeTomo;
+			packageProductDependencies = (
+			);
 			productName = meeTomo;
 			productReference = 521341DE2BB9405300A3A6B0 /* meeTomo.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +155,8 @@
 				Base,
 			);
 			mainGroup = 521341D52BB9405300A3A6B0;
+			packageReferences = (
+			);
 			productRefGroup = 521341DF2BB9405300A3A6B0 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -137,7 +183,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52A8DF502BC64DF300EE3998 /* Camera.swift in Sources */,
+				521341F02BC4CADD00A3A6B0 /* HomeView.swift in Sources */,
+				52A8DF522BC6589100EE3998 /* PhotoPicker.swift in Sources */,
+				523E26EF2BC6336900B3C4C1 /* FriendStructure.swift in Sources */,
+				523E26ED2BC6312F00B3C4C1 /* SettingView.swift in Sources */,
 				521341E42BB9405300A3A6B0 /* ContentView.swift in Sources */,
+				523E26EB2BC520BD00B3C4C1 /* AddFriendView.swift in Sources */,
 				521341E22BB9405300A3A6B0 /* meeTomoApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -275,6 +327,7 @@
 				DEVELOPMENT_TEAM = 9ACM3MY2N2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -304,6 +357,7 @@
 				DEVELOPMENT_TEAM = 9ACM3MY2N2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
