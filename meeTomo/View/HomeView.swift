@@ -12,6 +12,7 @@ struct HomeView: View {
     //SwiftData
     @Environment(\.modelContext) private var context
     @Query private var friends: [Friend]
+//    @Query(sort: \Photo.date) private var photos: [Photo]
 
     @State var isShowAdd = false
     @State private var isShowSetting = false
@@ -34,7 +35,6 @@ struct HomeView: View {
                     })
                     .sheet(isPresented: $isShowSetting, content: {
                         SettingView()
-                            .presentationDetents([.medium])
                     })
                     Spacer()
                     VStack{
@@ -96,7 +96,11 @@ struct HomeView: View {
 
                     VStack {
                         Text("next →")
-                        Text("\(friends[1].name)")
+                        if (1 < friends.count) {
+                            Text("\(friends[1].name)")
+                        } else {
+                            Text("友達がいません")
+                        }
                     }
                         .foregroundColor(.gray)
                     Spacer()

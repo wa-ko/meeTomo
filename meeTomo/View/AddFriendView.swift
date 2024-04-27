@@ -12,7 +12,8 @@ struct AddFriendView:View {
     //SwiftData
     @Environment(\.modelContext) private var context
     @Query private var friends: [Friend]
-    
+    @Query(sort: \Photo.date) private var photos: [Photo]
+
     @State private var selectedFriendName = ""
     @State private var date = Date()
     @State private var image = UIImage()
@@ -81,15 +82,9 @@ struct AddFriendView:View {
                 Text("追加")
             })
             Spacer()
-//            UIImage(data: friends.first?.photos.first?.image ?? Data())?
             processFriends() // 友達の情報を表示するメソッドを呼び出す
         }
     }
-    // データの削除
-    private func delete(friends: Friend) {
-        context.delete(friends)
-    }
-
     // 友達の情報を表示するメソッド
     @ViewBuilder
     private func processFriends() -> some View {

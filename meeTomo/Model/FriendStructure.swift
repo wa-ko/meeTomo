@@ -12,7 +12,7 @@ import SwiftData
 class Friend: Identifiable {
     var id = UUID()
     var name: String
-    var photos = [Photo]()
+    var photos: [Photo]
 
     init(name: String, photos: [Photo]) {
         self.name = name

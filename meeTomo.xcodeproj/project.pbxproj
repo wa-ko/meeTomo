@@ -14,6 +14,7 @@
 		523E26EB2BC520BD00B3C4C1 /* AddFriendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523E26EA2BC520BD00B3C4C1 /* AddFriendView.swift */; };
 		523E26ED2BC6312F00B3C4C1 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523E26EC2BC6312F00B3C4C1 /* SettingView.swift */; };
 		523E26EF2BC6336900B3C4C1 /* FriendStructure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523E26EE2BC6336900B3C4C1 /* FriendStructure.swift */; };
+		52583D632BDD43A00005153A /* DataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52583D622BDD43A00005153A /* DataView.swift */; };
 		52A8DF502BC64DF300EE3998 /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A8DF4F2BC64DF300EE3998 /* Camera.swift */; };
 		52A8DF522BC6589100EE3998 /* PhotoPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A8DF512BC6589100EE3998 /* PhotoPicker.swift */; };
 /* End PBXBuildFile section */
@@ -27,6 +28,7 @@
 		523E26EA2BC520BD00B3C4C1 /* AddFriendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFriendView.swift; sourceTree = "<group>"; };
 		523E26EC2BC6312F00B3C4C1 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 		523E26EE2BC6336900B3C4C1 /* FriendStructure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendStructure.swift; sourceTree = "<group>"; };
+		52583D622BDD43A00005153A /* DataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataView.swift; sourceTree = "<group>"; };
 		52A8DF4F2BC64DF300EE3998 /* Camera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Camera.swift; sourceTree = "<group>"; };
 		52A8DF512BC6589100EE3998 /* PhotoPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPicker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -83,6 +85,7 @@
 			isa = PBXGroup;
 			children = (
 				521341EF2BC4CADD00A3A6B0 /* HomeView.swift */,
+				52583D622BDD43A00005153A /* DataView.swift */,
 				523E26EC2BC6312F00B3C4C1 /* SettingView.swift */,
 				523E26EA2BC520BD00B3C4C1 /* AddFriendView.swift */,
 			);
@@ -186,6 +189,7 @@
 				523E26EF2BC6336900B3C4C1 /* FriendStructure.swift in Sources */,
 				523E26ED2BC6312F00B3C4C1 /* SettingView.swift in Sources */,
 				523E26EB2BC520BD00B3C4C1 /* AddFriendView.swift in Sources */,
+				52583D632BDD43A00005153A /* DataView.swift in Sources */,
 				521341E22BB9405300A3A6B0 /* meeTomoApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
