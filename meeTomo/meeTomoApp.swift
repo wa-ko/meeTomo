@@ -11,7 +11,9 @@ import SwiftUI
 struct meeTomoApp: App {
     var body: some Scene {
         WindowGroup {
-            HomeView(friends: [])
+            HomeView()
+                .modelContainer(for: Friend.self)
+
         }
     }
 }

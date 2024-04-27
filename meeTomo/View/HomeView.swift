@@ -6,15 +6,18 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct HomeView: View {
+    //SwiftData
+    @Environment(\.modelContext) private var context
+    @Query private var friends: [Friend]
+
     @State var isShowAdd = false
     @State private var isShowSetting = false
     //カメラ使用
     @State private var isPresentedCameraView = false
     @State private var image: UIImage?
-//    @AppStorage("friends") var friends: [Friend]
-    @State var friends: [Friend]
     var body: some View {
         ZStack {
             Color.black
@@ -35,9 +38,14 @@ struct HomeView: View {
                     })
                     Spacer()
                     VStack{
-                        Text("吉川花子")
-                        Text("\(friends.first?.photos.first?.date ?? Date())")
-                        .foregroundColor(.gray)             
+                        Text("\(friends.first?.name ?? "友達がいません")")
+                            .foregroundColor(.gray)
+                        VStack{
+                            let formatter = DateFormatter()
+                            formatter.dateFormat = DateFormatter.dateFormat(fromTemplate: "ydMMM", options: 0, locale: Locale(identifier: "ja_JP"))
+                            return Text(formatter.string(from: friends.first?.photos.first?.date ?? Date()))
+                                .foregroundColor(.gray)
+                        }
                     }
                     .foregroundColor(.gray)
                     Spacer()
@@ -49,7 +57,7 @@ struct HomeView: View {
                             .font(.title3)
                     })
                     .sheet(isPresented: $isShowAdd, content: {
-                        AddFriendView(friends: $friends, isShowAdd: $isShowAdd)
+                        AddFriendView(isShowAdd: $isShowAdd)
                     })
                 }
                 .padding()
@@ -88,7 +96,7 @@ struct HomeView: View {
 
                     VStack {
                         Text("next →")
-                        Text("山田正一")
+                        Text("\(friends[1].name)")
                     }
                         .foregroundColor(.gray)
                     Spacer()
@@ -119,5 +127,6 @@ struct HomeView: View {
 }
 
 #Preview {
-    HomeView(friends: [])
+    HomeView()
+        .modelContainer(for: Friend.self)
 }
