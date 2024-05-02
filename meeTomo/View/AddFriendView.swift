@@ -6,16 +6,20 @@
 //
 import SwiftUI
 import PhotosUI
+import SwiftData
 
 struct AddFriendView:View {
+    //SwiftData
+    @Environment(\.modelContext) private var context
+    @Query private var friends: [Friend]
+    @Query(sort: \Photo.date) private var photos: [Photo]
+
     @State private var selectedFriendName = ""
     @State private var date = Date()
     @State private var image = UIImage()
     @State private var text = ""
-    @State var isAddNewFriend = false
     @State var selectedImage: UIImage?
-    //テスト用変数
-    @Binding var friends: [Friend]
+    @State var isAddNewFriend = false
     @Binding var isShowAdd: Bool
 
     var body: some View {
@@ -39,7 +43,8 @@ struct AddFriendView:View {
                         if text.isEmpty {
                             return print("名前が入力されていません")
                         } else {
-                            friends.append(Friend(name: text, photos: []))
+                            let data = Friend(name: text, photos: [])
+                            context.insert(data)
                             text = ""
                         }
                     } label: {
@@ -64,17 +69,9 @@ struct AddFriendView:View {
                 if selectedFriendName.isEmpty || selectedImage == nil {
                     return print("データが存在しません")
                 } else {
-                    // 選択された日付と画像から写真データを作成
-                    let photo = Friend.Photo(date: date, image: selectedImage?.pngData() ?? Data())
-                    friends = friends.map { friend in
-                        var friend = friend
-                        if friend.name == selectedFriendName {
-                            friend.photos.append(photo)
-                        }
-                        return friend
-                    }
-                    // 選択された友達の写真リストに写真データを追加
-                    print(friends)
+                    let data = friends.first{$0.name == selectedFriendName}
+                    let photo = Photo(date: date, image: selectedImage?.pngData() ?? Data())
+                    data?.photos.append(photo)
     //                 データを追加した後は、選択された画像と日付をリセット
                     selectedImage = nil
                     date = Date()
@@ -85,7 +82,6 @@ struct AddFriendView:View {
                 Text("追加")
             })
             Spacer()
-//            UIImage(data: friends.first?.photos.first?.image ?? Data())?
             processFriends() // 友達の情報を表示するメソッドを呼び出す
         }
     }
@@ -95,7 +91,6 @@ struct AddFriendView:View {
         VStack(alignment: .leading) {
             ForEach(friends, id: \.id) { friend in
                 Text("Friend Name: \(friend.name)")
-                Text("Friend id: \(friend.id)")
                 VStack(alignment: .leading, spacing: 8) {
                     ForEach(friend.photos, id: \.date) { photo in
                         VStack(alignment: .leading, spacing: 4) {
@@ -118,5 +113,7 @@ struct AddFriendView:View {
 
 
 #Preview {
-    AddFriendView(friends: .constant([]), isShowAdd: .constant(true))
+    AddFriendView(isShowAdd: .constant(true))
+        .modelContainer(for: Friend.self)
+
 }
