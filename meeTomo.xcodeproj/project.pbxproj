@@ -10,10 +10,12 @@
 		185B8D422BF5FA5D00899B18 /* PolaroidView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185B8D412BF5FA5D00899B18 /* PolaroidView.swift */; };
 		185B8D452BF6005F00899B18 /* sampleImg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 185B8D442BF6005F00899B18 /* sampleImg.jpg */; };
 		185B8D472BF6093E00899B18 /* GalleryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185B8D462BF6093E00899B18 /* GalleryView.swift */; };
+		185B8D4B2BF6645000899B18 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185B8D4A2BF6645000899B18 /* HomeView.swift */; };
+		185B8D4D2BF6683E00899B18 /* MeetomoStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185B8D4C2BF6683E00899B18 /* MeetomoStyles.swift */; };
+		185B8D4F2BF66EE100899B18 /* left-handed_girlfriend.otf in Resources */ = {isa = PBXBuildFile; fileRef = 185B8D4E2BF66EE100899B18 /* left-handed_girlfriend.otf */; };
 		521341E22BB9405300A3A6B0 /* meeTomoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521341E12BB9405300A3A6B0 /* meeTomoApp.swift */; };
 		521341E62BB9405500A3A6B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 521341E52BB9405500A3A6B0 /* Assets.xcassets */; };
 		521341E92BB9405500A3A6B0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 521341E82BB9405500A3A6B0 /* Preview Assets.xcassets */; };
-		521341F02BC4CADD00A3A6B0 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521341EF2BC4CADD00A3A6B0 /* HomeView.swift */; };
 		522499212BEE7A7900E9C2A1 /* StyledRectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522499202BEE7A7900E9C2A1 /* StyledRectangle.swift */; };
 		523E26EB2BC520BD00B3C4C1 /* AddFriendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523E26EA2BC520BD00B3C4C1 /* AddFriendView.swift */; };
 		523E26ED2BC6312F00B3C4C1 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523E26EC2BC6312F00B3C4C1 /* SettingView.swift */; };
@@ -27,11 +29,14 @@
 		185B8D412BF5FA5D00899B18 /* PolaroidView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolaroidView.swift; sourceTree = "<group>"; };
 		185B8D442BF6005F00899B18 /* sampleImg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = sampleImg.jpg; path = ../../../../Downloads/sampleImg.jpg; sourceTree = "<group>"; };
 		185B8D462BF6093E00899B18 /* GalleryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryView.swift; sourceTree = "<group>"; };
+		185B8D4A2BF6645000899B18 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		185B8D4C2BF6683E00899B18 /* MeetomoStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetomoStyles.swift; sourceTree = "<group>"; };
+		185B8D4E2BF66EE100899B18 /* left-handed_girlfriend.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "left-handed_girlfriend.otf"; path = "../../../../Downloads/freefont_lefthanded/left-handed_girlfriend.otf"; sourceTree = "<group>"; };
+		185B8D522BF66F7C00899B18 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		521341DE2BB9405300A3A6B0 /* meeTomo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = meeTomo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		521341E12BB9405300A3A6B0 /* meeTomoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = meeTomoApp.swift; sourceTree = "<group>"; };
 		521341E52BB9405500A3A6B0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		521341E82BB9405500A3A6B0 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		521341EF2BC4CADD00A3A6B0 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		522499202BEE7A7900E9C2A1 /* StyledRectangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyledRectangle.swift; sourceTree = "<group>"; };
 		523E26EA2BC520BD00B3C4C1 /* AddFriendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFriendView.swift; sourceTree = "<group>"; };
 		523E26EC2BC6312F00B3C4C1 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
@@ -55,7 +60,9 @@
 		185B8D432BF6000100899B18 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				185B8D4E2BF66EE100899B18 /* left-handed_girlfriend.otf */,
 				185B8D442BF6005F00899B18 /* sampleImg.jpg */,
+				185B8D4C2BF6683E00899B18 /* MeetomoStyles.swift */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -79,6 +86,7 @@
 		521341E02BB9405300A3A6B0 /* meeTomo */ = {
 			isa = PBXGroup;
 			children = (
+				185B8D522BF66F7C00899B18 /* Info.plist */,
 				185B8D432BF6000100899B18 /* Assets */,
 				521341E12BB9405300A3A6B0 /* meeTomoApp.swift */,
 				523E26F02BC6341600B3C4C1 /* View */,
@@ -101,12 +109,12 @@
 		523E26F02BC6341600B3C4C1 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				521341EF2BC4CADD00A3A6B0 /* HomeView.swift */,
 				52583D622BDD43A00005153A /* DataView.swift */,
 				523E26EC2BC6312F00B3C4C1 /* SettingView.swift */,
 				523E26EA2BC520BD00B3C4C1 /* AddFriendView.swift */,
 				185B8D412BF5FA5D00899B18 /* PolaroidView.swift */,
 				185B8D462BF6093E00899B18 /* GalleryView.swift */,
+				185B8D4A2BF6645000899B18 /* HomeView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -191,6 +199,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				185B8D4F2BF66EE100899B18 /* left-handed_girlfriend.otf in Resources */,
 				521341E92BB9405500A3A6B0 /* Preview Assets.xcassets in Resources */,
 				185B8D452BF6005F00899B18 /* sampleImg.jpg in Resources */,
 				521341E62BB9405500A3A6B0 /* Assets.xcassets in Resources */,
@@ -207,12 +216,13 @@
 				52A8DF502BC64DF300EE3998 /* Camera.swift in Sources */,
 				522499212BEE7A7900E9C2A1 /* StyledRectangle.swift in Sources */,
 				185B8D422BF5FA5D00899B18 /* PolaroidView.swift in Sources */,
-				521341F02BC4CADD00A3A6B0 /* HomeView.swift in Sources */,
 				52A8DF522BC6589100EE3998 /* PhotoPicker.swift in Sources */,
 				523E26EF2BC6336900B3C4C1 /* FriendStructure.swift in Sources */,
 				523E26ED2BC6312F00B3C4C1 /* SettingView.swift in Sources */,
 				523E26EB2BC520BD00B3C4C1 /* AddFriendView.swift in Sources */,
 				185B8D472BF6093E00899B18 /* GalleryView.swift in Sources */,
+				185B8D4D2BF6683E00899B18 /* MeetomoStyles.swift in Sources */,
+				185B8D4B2BF6645000899B18 /* HomeView.swift in Sources */,
 				52583D632BDD43A00005153A /* DataView.swift in Sources */,
 				521341E22BB9405300A3A6B0 /* meeTomoApp.swift in Sources */,
 			);
@@ -351,6 +361,7 @@
 				DEVELOPMENT_TEAM = 9ACM3MY2N2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = meeTomo/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -381,6 +392,7 @@
 				DEVELOPMENT_TEAM = 9ACM3MY2N2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = meeTomo/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
