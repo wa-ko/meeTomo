@@ -12,7 +12,7 @@ struct AddFriendView:View {
     //SwiftData
     @Environment(\.modelContext) private var context
     @Query private var friends: [Friend]
-    @Query(sort: \Photo.date) private var photos: [Photo]
+//    @Query(sort: \Photo.date) private var photos: [Photo]
 
     @State private var selectedFriendName = ""
     @State private var date = Date()
@@ -82,31 +82,6 @@ struct AddFriendView:View {
                 Text("追加")
             })
             Spacer()
-            processFriends() // 友達の情報を表示するメソッドを呼び出す
-        }
-    }
-    // 友達の情報を表示するメソッド
-    @ViewBuilder
-    private func processFriends() -> some View {
-        VStack(alignment: .leading) {
-            ForEach(friends, id: \.id) { friend in
-                Text("Friend Name: \(friend.name)")
-                VStack(alignment: .leading, spacing: 8) {
-                    ForEach(friend.photos, id: \.date) { photo in
-                        VStack(alignment: .leading, spacing: 4) {
-                            Text("Photo Date: \(photo.date)")
-                            if let uiImage = UIImage(data: photo.image) {
-                                Image(uiImage: uiImage)
-                                    .resizable()
-                                    .scaledToFit()
-                                    .frame(width: 100, height: 100)
-                            }
-                        }
-                    }
-                }
-                .padding(.vertical, 8)
-                .border(Color.gray) // 友達ごとの区切りを明示するために境界線を追加
-            }
         }
     }
 }
