@@ -17,13 +17,18 @@ struct HomeView: View {
     @State private var image: UIImage?
     @State private var currentIndex = 0
     @State private var showGallery = false
+    @State private var selectedFriend: Friend? = nil
     @Namespace private var animationNamespace
     
     var body: some View {
         NavigationView {
             ZStack {
-                if showGallery {
-                    GalleryView(animationNamespace: animationNamespace)
+                if showGallery, let selectedFriend = selectedFriend {
+                    GalleryView(friend: selectedFriend, animationNamespace: animationNamespace) {
+                        withAnimation {
+                            showGallery = false
+                        }
+                    }
                         .transition(.move(edge: .bottom))
                 } else {
                     VStack {
@@ -39,7 +44,7 @@ struct HomeView: View {
             }
             .background(
                 LinearGradient(gradient: Gradient(colors: [.backgroundGreen, .backgroundOrange]), startPoint: .top, endPoint: .bottom)
-                .opacity(0.95)
+                    .opacity(0.95)
             )
         }
     }
@@ -86,18 +91,21 @@ struct HomeView: View {
         ZStack {
             PolaroidView(image: image, rotationDegrees: 4, destination: nil, width: 300, height: 500, namespace: animationNamespace, id: UUID())
                 .onTapGesture {
+                    selectedFriend = friends[currentIndex % friends.count]
                     withAnimation {
                         showGallery.toggle()
                     }
                 }
             PolaroidView(image: image, rotationDegrees: -6, destination: nil, width: 300, height: 500, namespace: animationNamespace, id: UUID())
                 .onTapGesture {
+                    selectedFriend = friends[currentIndex % friends.count]
                     withAnimation {
                         showGallery.toggle()
                     }
                 }
             PolaroidView(image: image, rotationDegrees: 0, destination: nil, width: 300, height: 500, namespace: animationNamespace, id: UUID())
                 .onTapGesture {
+                    selectedFriend = friends[currentIndex % friends.count]
                     withAnimation {
                         showGallery.toggle()
                     }
@@ -106,15 +114,18 @@ struct HomeView: View {
                 if let latestPhoto = friends[currentIndex % friends.count].latestPhoto(), let image = UIImage(data: latestPhoto.image) {
                     PolaroidView(image: image, rotationDegrees: 0, destination: nil, width: 300, height: 500, namespace: animationNamespace, id: UUID())
                         .onTapGesture {
+                            selectedFriend = friends[currentIndex % friends.count]
                             withAnimation {
                                 showGallery.toggle()
                             }
                         }
                 } else {
                     Text("No photos available")
+                        .foregroundColor(.gray)
                 }
             } else {
                 Text("友達がいません")
+                    .foregroundColor(.gray)
             }
         }
     }

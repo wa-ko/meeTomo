@@ -8,10 +8,9 @@ import SwiftUI
 import SwiftData
 
 struct GalleryView: View {
-    @Environment(\.modelContext) private var context
-    @Query private var friends: [Friend]
-    @Query(sort: \Photo.date) private var photos: [Photo]
+    var friend: Friend
     var animationNamespace: Namespace.ID
+    var dismiss: () -> Void
     
     var body: some View {
         let columns = [
@@ -19,9 +18,10 @@ struct GalleryView: View {
             GridItem(.flexible())
         ]
         
-        ScrollView {
-            LazyVGrid(columns: columns, spacing: 20) {
-                ForEach(friends, id: \.id) { friend in
+        VStack {
+            topBar
+            ScrollView {
+                LazyVGrid(columns: columns, spacing: 20) {
                     ForEach(friend.photos, id: \.date) { photo in
                         if let image = UIImage(data: photo.image) {
                             PolaroidView(
@@ -48,9 +48,27 @@ struct GalleryView: View {
                         }
                     }
                 }
+                .padding()
             }
-            .padding()
         }
+    }
+    
+    private var topBar: some View {
+        HStack {
+            Button(action: {
+                dismiss()
+            }) {
+                Image(systemName: "arrow.left")
+                    .foregroundColor(.gray)
+                    .font(.title3)
+            }
+            Spacer()
+            Text(friend.name)
+                .foregroundColor(.gray)
+                .font(.title3)
+            Spacer()
+        }
+        .padding()
     }
     
     private func formatDate(_ date: Date) -> String {
@@ -60,15 +78,15 @@ struct GalleryView: View {
     }
 }
 
-struct GalleryView_Previews: PreviewProvider {
-    static var previews: some View {
-        GalleryView(animationNamespace: Namespace().wrappedValue)
-            .modelContainer(for: Friend.self)
-    }
-}
+//#Preview {
+//    let samplePhotos = [
+//        Photo(date: Date(), image: UIImage(named: "sampleImag")!.pngData()!),
+//        Photo(date: Date().addingTimeInterval(-86400), image: UIImage(named: "sampleImage")!.pngData()!)
+//    ]
+//    
+//    let sampleFriend = Friend(name: "Satya", photos: samplePhotos)
+//    
+//    return GalleryView(friend: sampleFriend, animationNamespace: Namespace().wrappedValue, dismiss: {})
+//        .modelContainer(for: Friend.self)
+//}
 
-
-#Preview {
-    GalleryView(animationNamespace: Namespace().wrappedValue)
-        .modelContainer(for: Friend.self)
-}

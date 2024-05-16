@@ -54,7 +54,9 @@ struct PolaroidView: View {
                     Text(date)
                         .font(.caption)
                         .foregroundColor(.black)
-                        .padding(.top, 5)
+                        .frame(width: width - 20, alignment: .leading)
+                        .padding([.leading, .bottom], 10)
+                        
                 }
             }
         }
