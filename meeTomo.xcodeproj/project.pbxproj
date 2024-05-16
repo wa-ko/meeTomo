@@ -8,13 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		521341E22BB9405300A3A6B0 /* meeTomoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521341E12BB9405300A3A6B0 /* meeTomoApp.swift */; };
-		521341E42BB9405300A3A6B0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521341E32BB9405300A3A6B0 /* ContentView.swift */; };
 		521341E62BB9405500A3A6B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 521341E52BB9405500A3A6B0 /* Assets.xcassets */; };
 		521341E92BB9405500A3A6B0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 521341E82BB9405500A3A6B0 /* Preview Assets.xcassets */; };
 		521341F02BC4CADD00A3A6B0 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521341EF2BC4CADD00A3A6B0 /* HomeView.swift */; };
+		522499212BEE7A7900E9C2A1 /* StyledRectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522499202BEE7A7900E9C2A1 /* StyledRectangle.swift */; };
 		523E26EB2BC520BD00B3C4C1 /* AddFriendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523E26EA2BC520BD00B3C4C1 /* AddFriendView.swift */; };
 		523E26ED2BC6312F00B3C4C1 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523E26EC2BC6312F00B3C4C1 /* SettingView.swift */; };
 		523E26EF2BC6336900B3C4C1 /* FriendStructure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523E26EE2BC6336900B3C4C1 /* FriendStructure.swift */; };
+		52583D632BDD43A00005153A /* DataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52583D622BDD43A00005153A /* DataView.swift */; };
 		52A8DF502BC64DF300EE3998 /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A8DF4F2BC64DF300EE3998 /* Camera.swift */; };
 		52A8DF522BC6589100EE3998 /* PhotoPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A8DF512BC6589100EE3998 /* PhotoPicker.swift */; };
 /* End PBXBuildFile section */
@@ -22,13 +23,14 @@
 /* Begin PBXFileReference section */
 		521341DE2BB9405300A3A6B0 /* meeTomo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = meeTomo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		521341E12BB9405300A3A6B0 /* meeTomoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = meeTomoApp.swift; sourceTree = "<group>"; };
-		521341E32BB9405300A3A6B0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		521341E52BB9405500A3A6B0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		521341E82BB9405500A3A6B0 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		521341EF2BC4CADD00A3A6B0 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		522499202BEE7A7900E9C2A1 /* StyledRectangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyledRectangle.swift; sourceTree = "<group>"; };
 		523E26EA2BC520BD00B3C4C1 /* AddFriendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFriendView.swift; sourceTree = "<group>"; };
 		523E26EC2BC6312F00B3C4C1 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 		523E26EE2BC6336900B3C4C1 /* FriendStructure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendStructure.swift; sourceTree = "<group>"; };
+		52583D622BDD43A00005153A /* DataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataView.swift; sourceTree = "<group>"; };
 		52A8DF4F2BC64DF300EE3998 /* Camera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Camera.swift; sourceTree = "<group>"; };
 		52A8DF512BC6589100EE3998 /* PhotoPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPicker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -84,8 +86,8 @@
 		523E26F02BC6341600B3C4C1 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				521341E32BB9405300A3A6B0 /* ContentView.swift */,
 				521341EF2BC4CADD00A3A6B0 /* HomeView.swift */,
+				52583D622BDD43A00005153A /* DataView.swift */,
 				523E26EC2BC6312F00B3C4C1 /* SettingView.swift */,
 				523E26EA2BC520BD00B3C4C1 /* AddFriendView.swift */,
 			);
@@ -105,6 +107,7 @@
 			children = (
 				52A8DF512BC6589100EE3998 /* PhotoPicker.swift */,
 				52A8DF4F2BC64DF300EE3998 /* Camera.swift */,
+				522499202BEE7A7900E9C2A1 /* StyledRectangle.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -184,12 +187,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				52A8DF502BC64DF300EE3998 /* Camera.swift in Sources */,
+				522499212BEE7A7900E9C2A1 /* StyledRectangle.swift in Sources */,
 				521341F02BC4CADD00A3A6B0 /* HomeView.swift in Sources */,
 				52A8DF522BC6589100EE3998 /* PhotoPicker.swift in Sources */,
 				523E26EF2BC6336900B3C4C1 /* FriendStructure.swift in Sources */,
 				523E26ED2BC6312F00B3C4C1 /* SettingView.swift in Sources */,
-				521341E42BB9405300A3A6B0 /* ContentView.swift in Sources */,
 				523E26EB2BC520BD00B3C4C1 /* AddFriendView.swift in Sources */,
+				52583D632BDD43A00005153A /* DataView.swift in Sources */,
 				521341E22BB9405300A3A6B0 /* meeTomoApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
