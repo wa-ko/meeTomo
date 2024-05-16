@@ -11,6 +11,7 @@ struct GalleryView: View {
     @Environment(\.modelContext) private var context
     @Query private var friends: [Friend]
     @Query(sort: \Photo.date) private var photos: [Photo]
+    var animationNamespace: Namespace.ID
     
     var body: some View {
         let columns = [
@@ -23,9 +24,27 @@ struct GalleryView: View {
                 ForEach(friends, id: \.id) { friend in
                     ForEach(friend.photos, id: \.date) { photo in
                         if let image = UIImage(data: photo.image) {
-                            PolaroidView(image: image, rotationDegrees: 0, destination: nil as DataView?, width: 150, height: 250, date: formatDate(photo.date))
+                            PolaroidView(
+                                image: image,
+                                rotationDegrees: 0,
+                                destination: nil,
+                                width: 150,
+                                height: 250,
+                                date: formatDate(photo.date),
+                                namespace: animationNamespace,
+                                id: UUID()
+                            )
                         } else {
-                            PolaroidView(image: nil, rotationDegrees: 0, destination: nil as DataView?, width: 150, height: 250, date: formatDate(photo.date))
+                            PolaroidView(
+                                image: nil,
+                                rotationDegrees: 0,
+                                destination: nil,
+                                width: 150,
+                                height: 250,
+                                date: formatDate(photo.date),
+                                namespace: animationNamespace,
+                                id: UUID()
+                            )
                         }
                     }
                 }
@@ -43,7 +62,13 @@ struct GalleryView: View {
 
 struct GalleryView_Previews: PreviewProvider {
     static var previews: some View {
-        GalleryView()
+        GalleryView(animationNamespace: Namespace().wrappedValue)
             .modelContainer(for: Friend.self)
     }
+}
+
+
+#Preview {
+    GalleryView(animationNamespace: Namespace().wrappedValue)
+        .modelContainer(for: Friend.self)
 }
