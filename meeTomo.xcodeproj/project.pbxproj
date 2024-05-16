@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		185B8D422BF5FA5D00899B18 /* PolaroidView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185B8D412BF5FA5D00899B18 /* PolaroidView.swift */; };
+		185B8D452BF6005F00899B18 /* sampleImg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 185B8D442BF6005F00899B18 /* sampleImg.jpg */; };
+		185B8D472BF6093E00899B18 /* GalleryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185B8D462BF6093E00899B18 /* GalleryView.swift */; };
 		521341E22BB9405300A3A6B0 /* meeTomoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521341E12BB9405300A3A6B0 /* meeTomoApp.swift */; };
 		521341E62BB9405500A3A6B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 521341E52BB9405500A3A6B0 /* Assets.xcassets */; };
 		521341E92BB9405500A3A6B0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 521341E82BB9405500A3A6B0 /* Preview Assets.xcassets */; };
@@ -21,6 +24,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		185B8D412BF5FA5D00899B18 /* PolaroidView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolaroidView.swift; sourceTree = "<group>"; };
+		185B8D442BF6005F00899B18 /* sampleImg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = sampleImg.jpg; path = ../../../../Downloads/sampleImg.jpg; sourceTree = "<group>"; };
+		185B8D462BF6093E00899B18 /* GalleryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryView.swift; sourceTree = "<group>"; };
 		521341DE2BB9405300A3A6B0 /* meeTomo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = meeTomo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		521341E12BB9405300A3A6B0 /* meeTomoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = meeTomoApp.swift; sourceTree = "<group>"; };
 		521341E52BB9405500A3A6B0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -46,6 +52,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		185B8D432BF6000100899B18 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				185B8D442BF6005F00899B18 /* sampleImg.jpg */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
 		521341D52BB9405300A3A6B0 = {
 			isa = PBXGroup;
 			children = (
@@ -65,6 +79,7 @@
 		521341E02BB9405300A3A6B0 /* meeTomo */ = {
 			isa = PBXGroup;
 			children = (
+				185B8D432BF6000100899B18 /* Assets */,
 				521341E12BB9405300A3A6B0 /* meeTomoApp.swift */,
 				523E26F02BC6341600B3C4C1 /* View */,
 				52A8DF4E2BC63E5600EE3998 /* ViewModel */,
@@ -90,6 +105,8 @@
 				52583D622BDD43A00005153A /* DataView.swift */,
 				523E26EC2BC6312F00B3C4C1 /* SettingView.swift */,
 				523E26EA2BC520BD00B3C4C1 /* AddFriendView.swift */,
+				185B8D412BF5FA5D00899B18 /* PolaroidView.swift */,
+				185B8D462BF6093E00899B18 /* GalleryView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -175,6 +192,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				521341E92BB9405500A3A6B0 /* Preview Assets.xcassets in Resources */,
+				185B8D452BF6005F00899B18 /* sampleImg.jpg in Resources */,
 				521341E62BB9405500A3A6B0 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -188,11 +206,13 @@
 			files = (
 				52A8DF502BC64DF300EE3998 /* Camera.swift in Sources */,
 				522499212BEE7A7900E9C2A1 /* StyledRectangle.swift in Sources */,
+				185B8D422BF5FA5D00899B18 /* PolaroidView.swift in Sources */,
 				521341F02BC4CADD00A3A6B0 /* HomeView.swift in Sources */,
 				52A8DF522BC6589100EE3998 /* PhotoPicker.swift in Sources */,
 				523E26EF2BC6336900B3C4C1 /* FriendStructure.swift in Sources */,
 				523E26ED2BC6312F00B3C4C1 /* SettingView.swift in Sources */,
 				523E26EB2BC520BD00B3C4C1 /* AddFriendView.swift in Sources */,
+				185B8D472BF6093E00899B18 /* GalleryView.swift in Sources */,
 				52583D632BDD43A00005153A /* DataView.swift in Sources */,
 				521341E22BB9405300A3A6B0 /* meeTomoApp.swift in Sources */,
 			);
