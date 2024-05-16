@@ -44,23 +44,10 @@ struct HomeView: View {
                             if !friends.isEmpty {
                                 Text(friends[currentIndex % friends.count].name)
                                     .foregroundColor(.gray)
-//                                if let latestPhoto = friends[currentIndex % friends.count].latestPhoto() {
-//                                    let formatter = DateFormatter()
-//                                    formatter.dateFormat = "yyyy/MM/dd"  // Or any other format you prefer
-//                                    let dateString = formatter.string(from: latestPhoto.date)
-//                                    Text(dateString)
-//                                        .foregroundColor(.gray)
                             } else {
                                 Text("友達がいません")
                                     .foregroundColor(.gray)
                             }
-//                            VStack {
-//                                let formatter = DateFormatter()
-//                                formatter.dateFormat = DateFormatter.dateFormat(fromTemplate: "ydMMM", options: 0, locale: Locale(identifier: "ja_JP"))
-//                                return Text(formatter.string(from:friends[currentIndex % friends.count].latestPhoto()?.date ?? Date()))
-//                                    .foregroundColor(.gray)
-//                            }
-//                            .foregroundColor(.gray)
                         }
                         .foregroundColor(.gray)
                         Spacer()
@@ -77,24 +64,13 @@ struct HomeView: View {
                     }
                     .padding()
                     Spacer()
-                    ZStack{
-                        Rectangle()
-                            .fill(Color.gray)
-                            .rectangleStyle(rotationDegrees: 4)
-                        Rectangle()
-                            .fill(Color.gray)
-                            .rectangleStyle(rotationDegrees: -6)
-                        NavigationLink(destination: DataView()) {
-                            Rectangle()
-                                .fill(Color.gray)
-                                .rectangleStyle(rotationDegrees: 0)
-                        }
+                    ZStack {
+                        PolaroidView(image: image, rotationDegrees: 4, destination: GalleryView(), width: 300, height: 500)
+                        PolaroidView(image: image, rotationDegrees: -6, destination: GalleryView(), width: 300, height: 500)
+                        PolaroidView(image: image, rotationDegrees: 0, destination: GalleryView(), width: 300, height: 500)
                         if !friends.isEmpty {
                             if let latestPhoto = friends[currentIndex % friends.count].latestPhoto(), let image = UIImage(data: latestPhoto.image) {
-                                Image(uiImage: image)
-                                    .resizable()
-                                    .scaledToFit()
-                                    .frame(width: 300, height: 500)
+                                PolaroidView(image: image, rotationDegrees: 0, destination: GalleryView(), width: 300, height: 500)
                             } else {
                                 Text("No photos available")
                             }
