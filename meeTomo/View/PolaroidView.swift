@@ -34,7 +34,7 @@ struct PolaroidView: View {
     private var content: some View {
         ZStack {
             Rectangle()
-                .fill(Color.white)
+                .fill(Color.polaroidGray)
                 .frame(width: width, height: height)
                 .shadow(color: Color.black, radius: 10, x: 0, y: 0)
             

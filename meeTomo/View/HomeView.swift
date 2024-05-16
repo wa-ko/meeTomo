@@ -22,10 +22,6 @@ struct HomeView: View {
     var body: some View {
         NavigationView {
             ZStack {
-                Color.black
-                    .opacity(0.92)
-                    .ignoresSafeArea()
-                
                 if showGallery {
                     GalleryView(animationNamespace: animationNamespace)
                         .transition(.move(edge: .bottom))
@@ -42,7 +38,8 @@ struct HomeView: View {
                 }
             }
             .background(
-                LinearGradient(gradient: Gradient(colors: [.white, .black]), startPoint: .top, endPoint: .bottom)
+                LinearGradient(gradient: Gradient(colors: [.backgroundGreen, .backgroundOrange]), startPoint: .top, endPoint: .bottom)
+                .opacity(0.95)
             )
         }
     }
