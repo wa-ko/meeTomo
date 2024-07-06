@@ -1,13 +1,20 @@
-// PolaroidView.swift
+//
+//  PolaroidView.swift
+//  meeTomo
+//
+//  Created by Satya on 2024/05/16.
+//
 import SwiftUI
 
-struct PolaroidView<Destination: View>: View {
+struct PolaroidView: View {
     var image: UIImage?
     var rotationDegrees: Double
-    var destination: Destination?
+    var destination: AnyView?
     var width: CGFloat
     var height: CGFloat
     var date: String?
+    var namespace: Namespace.ID
+    var id: UUID
     
     var body: some View {
         Group {
@@ -20,13 +27,14 @@ struct PolaroidView<Destination: View>: View {
             }
         }
         .rotationEffect(Angle.degrees(rotationDegrees))
+        .matchedGeometryEffect(id: id, in: namespace)
     }
     
     @ViewBuilder
     private var content: some View {
         ZStack {
             Rectangle()
-                .fill(Color.white)
+                .fill(Color.polaroidGray)
                 .frame(width: width, height: height)
                 .shadow(color: Color.black, radius: 10, x: 0, y: 0)
             
@@ -36,7 +44,7 @@ struct PolaroidView<Destination: View>: View {
                         .resizable()
                         .scaledToFit()
                         .frame(width: width - 20, height: height - 100)
-                        .padding(.bottom, 10)  // Adjusted bottom margin
+                        .padding(.bottom, 10)
                 } else {
                     Text("No photo available")
                         .foregroundColor(.gray)
@@ -46,15 +54,15 @@ struct PolaroidView<Destination: View>: View {
                     Text(date)
                         .font(.caption)
                         .foregroundColor(.black)
-                        .padding(.top, 5)
+                        .frame(width: width - 20, alignment: .leading)
+                        .padding([.leading, .bottom], 10)
+                        
                 }
             }
         }
     }
 }
 
-struct PolaroidView_Previews: PreviewProvider {
-    static var previews: some View {
-        PolaroidView(image: UIImage(named: ""), rotationDegrees: 0, destination: DataView(), width: 300, height: 500, date: "2024-05-16")
-    }
+#Preview {
+    PolaroidView(image: UIImage(named: ""), rotationDegrees: 0, destination: nil, width: 300, height: 500, date: "2024-05-16", namespace: Namespace().wrappedValue, id: UUID())
 }
