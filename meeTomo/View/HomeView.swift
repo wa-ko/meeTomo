@@ -14,14 +14,15 @@ struct HomeView: View {
     @State var isShowAdd = false
     @State private var isShowSetting = false
     @State private var isPresentedCameraView = false
+    @State private var isShowTimeGallery = false
     @State private var image: UIImage?
     @State private var currentIndex = 0
     @State private var showGallery = false
     @State private var selectedFriend: Friend? = nil
     @Namespace private var animationNamespace
-    
+
     var body: some View {
-        NavigationView {
+        NavigationStack {
             ZStack {
                 if showGallery, let selectedFriend = selectedFriend {
                     GalleryView(friend: selectedFriend, animationNamespace: animationNamespace) {
@@ -29,7 +30,7 @@ struct HomeView: View {
                             showGallery = false
                         }
                     }
-                        .transition(.move(edge: .bottom))
+                    .transition(.move(edge: .bottom))
                 } else {
                     VStack {
                         topBar
@@ -46,9 +47,13 @@ struct HomeView: View {
                 LinearGradient(gradient: Gradient(colors: [.backgroundGreen, .backgroundOrange]), startPoint: .top, endPoint: .bottom)
                     .opacity(0.95)
             )
+            .navigationDestination(isPresented: $isShowTimeGallery) {
+                TimeGalleryView()
+                    .transition(.move(edge: .trailing))
+            }
         }
     }
-    
+
     private var topBar: some View {
         HStack {
             Button(action: {
@@ -86,7 +91,7 @@ struct HomeView: View {
         }
         .padding()
     }
-    
+
     private var photoStack: some View {
         ZStack {
             PolaroidView(image: image, rotationDegrees: 4, destination: nil, width: 300, height: 500, namespace: animationNamespace, id: UUID())
@@ -129,25 +134,18 @@ struct HomeView: View {
             }
         }
     }
-    
+
     private var bottomBar: some View {
         HStack {
-            Menu {
-                Button {} label: {
-                    Label("1つ後ろに", systemImage: "rectangle.stack.badge.plus")
-                }
-                Button {} label: {
-                    Label("半分後ろに", systemImage: "folder.badge.plus")
-                }
-                Button {} label: {
-                    Label("1番後ろに", systemImage: "rectangle.stack.badge.person.crop")
-                }
+            Button {
+                isShowTimeGallery = true
             } label: {
                 Image(systemName: "photo.on.rectangle.angled")
                     .foregroundColor(.gray)
                     .font(.title3)
             }
             Spacer()
+
             VStack {
                 if !friends.isEmpty {
                     Button {
@@ -181,7 +179,7 @@ struct HomeView: View {
             }
             .onChange(of: image) {
                 friends.first{$0.name == friends[currentIndex % friends.count].name}?.photos.append(Photo(date: Date(), image: image?.pngData() ?? Data()))
-                }
+            }
         }
         .padding()
     }
