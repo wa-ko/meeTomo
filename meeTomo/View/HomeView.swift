@@ -101,7 +101,7 @@ struct HomeView: View {
                     if !friends.isEmpty {
                         selectedFriend = friends[currentIndex % friends.count]
                         withAnimation {
-                            showGallery.toggle()
+                            isShowGallery.toggle()
                         }
                     }
                 }
@@ -110,7 +110,7 @@ struct HomeView: View {
                     if !friends.isEmpty {
                         selectedFriend = friends[currentIndex % friends.count]
                         withAnimation {
-                            showGallery.toggle()
+                            isShowGallery.toggle()
                         }
                     }
                 }
@@ -119,7 +119,7 @@ struct HomeView: View {
                     if !friends.isEmpty {
                         selectedFriend = friends[currentIndex % friends.count]
                         withAnimation {
-                            showGallery.toggle()
+                            isShowGallery.toggle()
                         }
                     }
                 }
