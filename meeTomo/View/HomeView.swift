@@ -175,16 +175,13 @@ struct HomeView: View {
                         .foregroundColor(.gray)
                         .font(.title3)
                 }
-                if let image {
-                    Image(uiImage: image)
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 300)
-                }
             }
             .fullScreenCover(isPresented: $isPresentedCameraView) {
                 CameraView(image: $image).ignoresSafeArea()
             }
+            .onChange(of: image) {
+                friends.first{$0.name == friends[currentIndex % friends.count].name}?.photos.append(Photo(date: Date(), image: image?.pngData() ?? Data()))
+                }
         }
         .padding()
     }
