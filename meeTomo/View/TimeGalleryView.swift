@@ -1,17 +1,24 @@
 import SwiftUI
 import SwiftData
 
+struct OptimizedPhoto: Identifiable {
+    var id: Date { date }
+    var date: Date
+    var image: Data
+}
+
 struct TimeGalleryView: View {
     @Query private var friends: [Friend]
-    @State private var selectedPhoto: Photo?
+    @State private var selectedPhoto: OptimizedPhoto?
     @Namespace private var animationNamespace
     
-    private var photosByDate: [String: [Photo]] {
+    private var photosByDate: [String: [OptimizedPhoto]] {
         Dictionary(grouping: friends.flatMap { $0.photos }.sorted { $0.date > $1.date }) { photo in
             let formatter = DateFormatter()
             formatter.dateFormat = "yyyy-MM-dd"
             return formatter.string(from: photo.date)
         }
+        .mapValues { $0.map { OptimizedPhoto(date: $0.date, image: $0.image) } }
     }
     
     let columns = [
@@ -35,7 +42,7 @@ struct TimeGalleryView: View {
                                 .background(Color.gray)
                             
                             LazyVGrid(columns: columns, spacing: 16) {
-                                ForEach(photosByDate[date] ?? [], id: \.date) { photo in
+                                ForEach(photosByDate[date] ?? [], id: \.id) { photo in
                                     if let uiImage = UIImage(data: photo.image) {
                                         Image(uiImage: uiImage)
                                             .resizable()
@@ -44,9 +51,7 @@ struct TimeGalleryView: View {
                                             .clipped()
                                             .cornerRadius(8)
                                             .onTapGesture {
-                                                withAnimation(.spring(response: 0.5, dampingFraction: 0.75, blendDuration: 0.5)) {
-                                                    selectedPhoto = photo
-                                                }
+                                                selectPhoto(photo)
                                             }
                                     }
                                 }
@@ -99,6 +104,21 @@ struct TimeGalleryView: View {
         let formatter = DateFormatter()
         formatter.dateStyle = .medium
         return formatter.string(from: date)
+    }
+    
+    private func selectPhoto(_ photo: OptimizedPhoto) {
+        Task {
+            await displaySelectedPhoto(photo)
+        }
+    }
+    
+    @MainActor
+    private func displaySelectedPhoto(_ photo: OptimizedPhoto) async {
+        // Using a delay to simulate heavy processing (if needed)
+        await Task.sleep(300_000_000) // 300 milliseconds
+        withAnimation(.spring(response: 0.5, dampingFraction: 0.75, blendDuration: 0.5)) {
+            selectedPhoto = photo
+        }
     }
 }
 
