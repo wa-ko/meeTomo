@@ -54,7 +54,7 @@ struct HomeView: View {
             Button(action: {
                 isShowSetting.toggle()
             }) {
-                Image(systemName: "gearshape")
+                Image(systemName: "person.crop.circle.badge.minus")
                     .foregroundColor(.gray)
                     .font(.title3)
             }
@@ -143,7 +143,7 @@ struct HomeView: View {
                     Label("1番後ろに", systemImage: "rectangle.stack.badge.person.crop")
                 }
             } label: {
-                Image(systemName: "return")
+                Image(systemName: "photo.on.rectangle.angled")
                     .foregroundColor(.gray)
                     .font(.title3)
             }
