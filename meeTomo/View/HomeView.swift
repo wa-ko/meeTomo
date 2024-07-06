@@ -96,45 +96,39 @@ struct HomeView: View {
 
     private var photoStack: some View {
         ZStack {
-            PolaroidView(image: image, rotationDegrees: 4, destination: nil, width: 300, height: 500, namespace: animationNamespace, id: UUID())
-                .onTapGesture {
-                    if !friends.isEmpty {
-                        selectedFriend = friends[currentIndex % friends.count]
-                        withAnimation {
-                            showGallery.toggle()
-                        }
-                    }
-                }
-            PolaroidView(image: image, rotationDegrees: -6, destination: nil, width: 300, height: 500, namespace: animationNamespace, id: UUID())
-                .onTapGesture {
-                    if !friends.isEmpty {
-                        selectedFriend = friends[currentIndex % friends.count]
-                        withAnimation {
-                            showGallery.toggle()
-                        }
-                    }
-                }
-            PolaroidView(image: image, rotationDegrees: 0, destination: nil, width: 300, height: 500, namespace: animationNamespace, id: UUID())
-                .onTapGesture {
-                    if !friends.isEmpty {
-                        selectedFriend = friends[currentIndex % friends.count]
-                        withAnimation {
-                            showGallery.toggle()
-                        }
-                    }
-                }
             if !friends.isEmpty {
                 if let latestPhoto = friends[currentIndex % friends.count].latestPhoto(), let image = UIImage(data: latestPhoto.image) {
+                    PolaroidView(image: image, rotationDegrees: 4, destination: nil, width: 300, height: 500, namespace: animationNamespace, id: UUID())
+                        .onTapGesture {
+                            if !friends.isEmpty {
+                                selectedFriend = friends[currentIndex % friends.count]
+                                withAnimation {
+                                    isShowGallery.toggle()
+                                }
+                            }
+                        }
+                    PolaroidView(image: image, rotationDegrees: -6, destination: nil, width: 300, height: 500, namespace: animationNamespace, id: UUID())
+                        .onTapGesture {
+                            if !friends.isEmpty {
+                                selectedFriend = friends[currentIndex % friends.count]
+                                withAnimation {
+                                    isShowGallery.toggle()
+                                }
+                            }
+                        }
                     PolaroidView(image: image, rotationDegrees: 0, destination: nil, width: 300, height: 500, namespace: animationNamespace, id: UUID())
                         .onTapGesture {
-                            selectedFriend = friends[currentIndex % friends.count]
-                            withAnimation {
-                                isShowGallery.toggle()
+                            if !friends.isEmpty {
+                                selectedFriend = friends[currentIndex % friends.count]
+                                withAnimation {
+                                    isShowGallery.toggle()
+                                }
                             }
                         }
                 } else {
-                    Text("No photos available")
-                        .foregroundColor(.gray)
+                    PolaroidView(image: nil, rotationDegrees: 4, destination: nil, width: 300, height: 500, namespace: animationNamespace, id: UUID())
+                    PolaroidView(image: nil, rotationDegrees: -6, destination: nil, width: 300, height: 500, namespace: animationNamespace, id: UUID())
+                    PolaroidView(image: nil, rotationDegrees: 0, destination: nil, width: 300, height: 500, namespace: animationNamespace, id: UUID())
                 }
             } else {
                 Text("友達がいません")
