@@ -76,12 +76,14 @@ struct HomeView: View {
             Button(action: {
                 isShowAdd.toggle()
             }) {
-                Image(systemName: "plus")
+                Image(systemName: "person.crop.circle.badge.plus")
                     .foregroundColor(.gray)
                     .font(.title3)
             }
             .sheet(isPresented: $isShowAdd) {
                 AddFriendView(isShowAdd: $isShowAdd)
+                .presentationBackground(.thinMaterial)
+                .presentationCornerRadius(20)
             }
         }
         .padding()
@@ -91,23 +93,29 @@ struct HomeView: View {
         ZStack {
             PolaroidView(image: image, rotationDegrees: 4, destination: nil, width: 300, height: 500, namespace: animationNamespace, id: UUID())
                 .onTapGesture {
-                    selectedFriend = friends[currentIndex % friends.count]
-                    withAnimation {
-                        showGallery.toggle()
+                    if !friends.isEmpty {
+                        selectedFriend = friends[currentIndex % friends.count]
+                        withAnimation {
+                            showGallery.toggle()
+                        }
                     }
                 }
             PolaroidView(image: image, rotationDegrees: -6, destination: nil, width: 300, height: 500, namespace: animationNamespace, id: UUID())
                 .onTapGesture {
-                    selectedFriend = friends[currentIndex % friends.count]
-                    withAnimation {
-                        showGallery.toggle()
+                    if !friends.isEmpty {
+                        selectedFriend = friends[currentIndex % friends.count]
+                        withAnimation {
+                            showGallery.toggle()
+                        }
                     }
                 }
             PolaroidView(image: image, rotationDegrees: 0, destination: nil, width: 300, height: 500, namespace: animationNamespace, id: UUID())
                 .onTapGesture {
-                    selectedFriend = friends[currentIndex % friends.count]
-                    withAnimation {
-                        showGallery.toggle()
+                    if !friends.isEmpty {
+                        selectedFriend = friends[currentIndex % friends.count]
+                        withAnimation {
+                            showGallery.toggle()
+                        }
                     }
                 }
             if !friends.isEmpty {
