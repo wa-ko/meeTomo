@@ -8,11 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		185B8D422BF5FA5D00899B18 /* PolaroidView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185B8D412BF5FA5D00899B18 /* PolaroidView.swift */; };
-		185B8D452BF6005F00899B18 /* sampleImg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 185B8D442BF6005F00899B18 /* sampleImg.jpg */; };
 		185B8D472BF6093E00899B18 /* GalleryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185B8D462BF6093E00899B18 /* GalleryView.swift */; };
 		185B8D4B2BF6645000899B18 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185B8D4A2BF6645000899B18 /* HomeView.swift */; };
 		185B8D4D2BF6683E00899B18 /* MeetomoStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185B8D4C2BF6683E00899B18 /* MeetomoStyles.swift */; };
-		185B8D4F2BF66EE100899B18 /* left-handed_girlfriend.otf in Resources */ = {isa = PBXBuildFile; fileRef = 185B8D4E2BF66EE100899B18 /* left-handed_girlfriend.otf */; };
+		1892D65A2C390E22005730E0 /* left-handed_girlfriend.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1892D6592C390E22005730E0 /* left-handed_girlfriend.otf */; };
+		1892D65E2C390E62005730E0 /* sampleImg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1892D65D2C390E62005730E0 /* sampleImg.jpg */; };
 		521341E22BB9405300A3A6B0 /* meeTomoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521341E12BB9405300A3A6B0 /* meeTomoApp.swift */; };
 		521341E62BB9405500A3A6B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 521341E52BB9405500A3A6B0 /* Assets.xcassets */; };
 		521341E92BB9405500A3A6B0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 521341E82BB9405500A3A6B0 /* Preview Assets.xcassets */; };
@@ -27,12 +27,12 @@
 
 /* Begin PBXFileReference section */
 		185B8D412BF5FA5D00899B18 /* PolaroidView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolaroidView.swift; sourceTree = "<group>"; };
-		185B8D442BF6005F00899B18 /* sampleImg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = sampleImg.jpg; path = ../../../../Downloads/sampleImg.jpg; sourceTree = "<group>"; };
 		185B8D462BF6093E00899B18 /* GalleryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryView.swift; sourceTree = "<group>"; };
 		185B8D4A2BF6645000899B18 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		185B8D4C2BF6683E00899B18 /* MeetomoStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetomoStyles.swift; sourceTree = "<group>"; };
-		185B8D4E2BF66EE100899B18 /* left-handed_girlfriend.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "left-handed_girlfriend.otf"; path = "../../../../Downloads/freefont_lefthanded/left-handed_girlfriend.otf"; sourceTree = "<group>"; };
 		185B8D522BF66F7C00899B18 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		1892D6592C390E22005730E0 /* left-handed_girlfriend.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "left-handed_girlfriend.otf"; path = "../../../../.Trash/left-handed_girlfriend.otf"; sourceTree = "<group>"; };
+		1892D65D2C390E62005730E0 /* sampleImg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = sampleImg.jpg; path = ../../../../.Trash/sampleImg.jpg; sourceTree = "<group>"; };
 		521341DE2BB9405300A3A6B0 /* meeTomo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = meeTomo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		521341E12BB9405300A3A6B0 /* meeTomoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = meeTomoApp.swift; sourceTree = "<group>"; };
 		521341E52BB9405500A3A6B0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -60,8 +60,8 @@
 		185B8D432BF6000100899B18 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
-				185B8D4E2BF66EE100899B18 /* left-handed_girlfriend.otf */,
-				185B8D442BF6005F00899B18 /* sampleImg.jpg */,
+				1892D6592C390E22005730E0 /* left-handed_girlfriend.otf */,
+				1892D65D2C390E62005730E0 /* sampleImg.jpg */,
 				185B8D4C2BF6683E00899B18 /* MeetomoStyles.swift */,
 			);
 			path = Assets;
@@ -199,10 +199,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				185B8D4F2BF66EE100899B18 /* left-handed_girlfriend.otf in Resources */,
 				521341E92BB9405500A3A6B0 /* Preview Assets.xcassets in Resources */,
-				185B8D452BF6005F00899B18 /* sampleImg.jpg in Resources */,
+				1892D65A2C390E22005730E0 /* left-handed_girlfriend.otf in Resources */,
 				521341E62BB9405500A3A6B0 /* Assets.xcassets in Resources */,
+				1892D65E2C390E62005730E0 /* sampleImg.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
