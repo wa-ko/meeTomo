@@ -14,22 +14,23 @@ struct HomeView: View {
     @State var isShowAdd = false
     @State private var isShowSetting = false
     @State private var isPresentedCameraView = false
+    @State private var isShowTimeGallery = false
     @State private var image: UIImage?
     @State private var currentIndex = 0
-    @State private var showGallery = false
+    @State private var isShowGallery = false
     @State private var selectedFriend: Friend? = nil
     @Namespace private var animationNamespace
-    
+
     var body: some View {
-        NavigationView {
+        NavigationStack {
             ZStack {
-                if showGallery, let selectedFriend = selectedFriend {
+                if isShowGallery, let selectedFriend = selectedFriend {
                     GalleryView(friend: selectedFriend, animationNamespace: animationNamespace) {
                         withAnimation {
-                            showGallery = false
+                            isShowGallery = false
                         }
                     }
-                        .transition(.move(edge: .bottom))
+                    .transition(.move(edge: .bottom))
                 } else {
                     VStack {
                         topBar
@@ -46,15 +47,19 @@ struct HomeView: View {
                 LinearGradient(gradient: Gradient(colors: [.backgroundGreen, .backgroundOrange]), startPoint: .top, endPoint: .bottom)
                     .opacity(0.95)
             )
+            .navigationDestination(isPresented: $isShowTimeGallery) {
+                TimeGalleryView()
+                    .transition(.move(edge: .trailing))
+            }
         }
     }
-    
+
     private var topBar: some View {
         HStack {
             Button(action: {
                 isShowSetting.toggle()
             }) {
-                Image(systemName: "gearshape")
+                Image(systemName: "person.crop.circle.badge.minus")
                     .foregroundColor(.gray)
                     .font(.title3)
             }
@@ -88,7 +93,7 @@ struct HomeView: View {
         }
         .padding()
     }
-    
+
     private var photoStack: some View {
         ZStack {
             PolaroidView(image: image, rotationDegrees: 4, destination: nil, width: 300, height: 500, namespace: animationNamespace, id: UUID())
@@ -124,7 +129,7 @@ struct HomeView: View {
                         .onTapGesture {
                             selectedFriend = friends[currentIndex % friends.count]
                             withAnimation {
-                                showGallery.toggle()
+                                isShowGallery.toggle()
                             }
                         }
                 } else {
@@ -137,25 +142,18 @@ struct HomeView: View {
             }
         }
     }
-    
+
     private var bottomBar: some View {
         HStack {
-            Menu {
-                Button {} label: {
-                    Label("1つ後ろに", systemImage: "rectangle.stack.badge.plus")
-                }
-                Button {} label: {
-                    Label("半分後ろに", systemImage: "folder.badge.plus")
-                }
-                Button {} label: {
-                    Label("1番後ろに", systemImage: "rectangle.stack.badge.person.crop")
-                }
+            Button {
+                isShowTimeGallery = true
             } label: {
-                Image(systemName: "return")
+                Image(systemName: "photo.on.rectangle.angled")
                     .foregroundColor(.gray)
                     .font(.title3)
             }
             Spacer()
+
             VStack {
                 if !friends.isEmpty {
                     Button {
@@ -183,15 +181,12 @@ struct HomeView: View {
                         .foregroundColor(.gray)
                         .font(.title3)
                 }
-                if let image {
-                    Image(uiImage: image)
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 300)
-                }
             }
             .fullScreenCover(isPresented: $isPresentedCameraView) {
                 CameraView(image: $image).ignoresSafeArea()
+            }
+            .onChange(of: image) {
+                friends.first{$0.name == friends[currentIndex % friends.count].name}?.photos.append(Photo(date: Date(), image: image?.pngData() ?? Data()))
             }
         }
         .padding()
