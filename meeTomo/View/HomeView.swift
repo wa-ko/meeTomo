@@ -17,17 +17,17 @@ struct HomeView: View {
     @State private var isShowTimeGallery = false
     @State private var image: UIImage?
     @State private var currentIndex = 0
-    @State private var showGallery = false
+    @State private var isShowGallery = false
     @State private var selectedFriend: Friend? = nil
     @Namespace private var animationNamespace
 
     var body: some View {
         NavigationStack {
             ZStack {
-                if showGallery, let selectedFriend = selectedFriend {
+                if isShowGallery, let selectedFriend = selectedFriend {
                     GalleryView(friend: selectedFriend, animationNamespace: animationNamespace) {
                         withAnimation {
-                            showGallery = false
+                            isShowGallery = false
                         }
                     }
                     .transition(.move(edge: .bottom))
@@ -98,21 +98,21 @@ struct HomeView: View {
                 .onTapGesture {
                     selectedFriend = friends[currentIndex % friends.count]
                     withAnimation {
-                        showGallery.toggle()
+                        isShowGallery.toggle()
                     }
                 }
             PolaroidView(image: image, rotationDegrees: -6, destination: nil, width: 300, height: 500, namespace: animationNamespace, id: UUID())
                 .onTapGesture {
                     selectedFriend = friends[currentIndex % friends.count]
                     withAnimation {
-                        showGallery.toggle()
+                        isShowGallery.toggle()
                     }
                 }
             PolaroidView(image: image, rotationDegrees: 0, destination: nil, width: 300, height: 500, namespace: animationNamespace, id: UUID())
                 .onTapGesture {
                     selectedFriend = friends[currentIndex % friends.count]
                     withAnimation {
-                        showGallery.toggle()
+                        isShowGallery.toggle()
                     }
                 }
             if !friends.isEmpty {
@@ -121,7 +121,7 @@ struct HomeView: View {
                         .onTapGesture {
                             selectedFriend = friends[currentIndex % friends.count]
                             withAnimation {
-                                showGallery.toggle()
+                                isShowGallery.toggle()
                             }
                         }
                 } else {
