@@ -53,7 +53,6 @@ struct PolaroidView: View {
                         .foregroundColor(.black)
                         .frame(width: width - 20, alignment: .leading)
                         .padding([.leading, .bottom], 10)
-                        
                 }
             }
         }
