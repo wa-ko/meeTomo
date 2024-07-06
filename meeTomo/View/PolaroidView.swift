@@ -45,9 +45,6 @@ struct PolaroidView: View {
                         .scaledToFit()
                         .frame(width: width - 20, height: height - 100)
                         .padding(.bottom, 10)
-                } else {
-                    Text("No photo available")
-                        .foregroundColor(.gray)
                 }
                 
                 if let date = date {

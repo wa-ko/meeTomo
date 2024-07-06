@@ -11,6 +11,11 @@
 		185B8D472BF6093E00899B18 /* GalleryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185B8D462BF6093E00899B18 /* GalleryView.swift */; };
 		185B8D4B2BF6645000899B18 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185B8D4A2BF6645000899B18 /* HomeView.swift */; };
 		185B8D4D2BF6683E00899B18 /* MeetomoStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185B8D4C2BF6683E00899B18 /* MeetomoStyles.swift */; };
+		1892D65A2C390E22005730E0 /* left-handed_girlfriend.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1892D6592C390E22005730E0 /* left-handed_girlfriend.otf */; };
+		1892D65E2C390E62005730E0 /* sampleImg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1892D65D2C390E62005730E0 /* sampleImg.jpg */; };
+		1892D6622C393E0F005730E0 /* DropDownMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1892D6612C393E0F005730E0 /* DropDownMenu.swift */; };
+		1892D6662C39633D005730E0 /* CustomDatePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1892D6652C39633D005730E0 /* CustomDatePickerView.swift */; };
+		1892D6682C397732005730E0 /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1892D6672C397732005730E0 /* BlurView.swift */; };
 		521341E22BB9405300A3A6B0 /* meeTomoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521341E12BB9405300A3A6B0 /* meeTomoApp.swift */; };
 		521341E62BB9405500A3A6B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 521341E52BB9405500A3A6B0 /* Assets.xcassets */; };
 		521341E92BB9405500A3A6B0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 521341E82BB9405500A3A6B0 /* Preview Assets.xcassets */; };
@@ -32,6 +37,11 @@
 		185B8D4A2BF6645000899B18 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		185B8D4C2BF6683E00899B18 /* MeetomoStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetomoStyles.swift; sourceTree = "<group>"; };
 		185B8D522BF66F7C00899B18 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		1892D6592C390E22005730E0 /* left-handed_girlfriend.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "left-handed_girlfriend.otf"; path = "../../../../.Trash/left-handed_girlfriend.otf"; sourceTree = "<group>"; };
+		1892D65D2C390E62005730E0 /* sampleImg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = sampleImg.jpg; path = ../../../../.Trash/sampleImg.jpg; sourceTree = "<group>"; };
+		1892D6612C393E0F005730E0 /* DropDownMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownMenu.swift; sourceTree = "<group>"; };
+		1892D6652C39633D005730E0 /* CustomDatePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDatePickerView.swift; sourceTree = "<group>"; };
+		1892D6672C397732005730E0 /* BlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurView.swift; sourceTree = "<group>"; };
 		521341DE2BB9405300A3A6B0 /* meeTomo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = meeTomo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		521341E12BB9405300A3A6B0 /* meeTomoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = meeTomoApp.swift; sourceTree = "<group>"; };
 		521341E52BB9405500A3A6B0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -117,6 +127,9 @@
 				185B8D412BF5FA5D00899B18 /* PolaroidView.swift */,
 				185B8D462BF6093E00899B18 /* GalleryView.swift */,
 				185B8D4A2BF6645000899B18 /* HomeView.swift */,
+				1892D6612C393E0F005730E0 /* DropDownMenu.swift */,
+				1892D6652C39633D005730E0 /* CustomDatePickerView.swift */,
+				1892D6672C397732005730E0 /* BlurView.swift */,
 				52BE12E22C39646D002491B0 /* TimeGalleryView.swift */,
 			);
 			path = View;
@@ -217,7 +230,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				52A8DF502BC64DF300EE3998 /* Camera.swift in Sources */,
+				1892D6662C39633D005730E0 /* CustomDatePickerView.swift in Sources */,
+				1892D6682C397732005730E0 /* BlurView.swift in Sources */,
 				522499212BEE7A7900E9C2A1 /* StyledRectangle.swift in Sources */,
+				1892D6622C393E0F005730E0 /* DropDownMenu.swift in Sources */,
 				185B8D422BF5FA5D00899B18 /* PolaroidView.swift in Sources */,
 				52A8DF522BC6589100EE3998 /* PhotoPicker.swift in Sources */,
 				523E26EF2BC6336900B3C4C1 /* FriendStructure.swift in Sources */,
@@ -287,7 +303,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -344,7 +360,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -362,7 +378,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"meeTomo/Preview Content\"";
-				DEVELOPMENT_TEAM = 9ACM3MY2N2;
+				DEVELOPMENT_TEAM = 74GGTPACQS;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = meeTomo/Info.plist;
@@ -372,6 +388,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -393,7 +410,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"meeTomo/Preview Content\"";
-				DEVELOPMENT_TEAM = 9ACM3MY2N2;
+				DEVELOPMENT_TEAM = 74GGTPACQS;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = meeTomo/Info.plist;
@@ -403,6 +420,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
