@@ -31,3 +31,8 @@ class Photo {
     }
 }
 
+extension Friend {
+    func latestPhoto() -> Photo? {
+        return photos.max { $0.date < $1.date }
+    }
+}
